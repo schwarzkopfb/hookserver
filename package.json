@@ -1,0 +1,30 @@
+{
+  "name": "hookserver",
+  "version": "1.0.0",
+  "description": "A simple webserver and cli utility that provides an http interface to accept webhooks that are triggering bash script execution.",
+  "main": "index.js",
+  "preferGlobal": true,
+  "scripts": {
+    "test": "npm test"
+  },
+  "bin": {
+    "hookserver": "index.js"
+  },
+  "keywords": [
+    "http",
+    "server",
+    "hook",
+    "webhook",
+    "web-hook",
+    "execute",
+    "bash",
+    "script",
+    "trigger"
+  ],
+  "author": "Schwarzkopf Balazs <schwarzkopfb@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "minimist": "^1.2.0"
+  }
+}
