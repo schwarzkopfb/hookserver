@@ -3,12 +3,11 @@
 ## Usage
 
 ```sh
-
 # install Hookserver as a cli tool
 npm install -g hookserver
 
-# start Hookserver daemonized
-hookserver start -d
+# start Hookserver daemonized and redirect log to ./hookserver.log
+hookserver start -d -l ./hookserver.log
 
 # switch to the examples folder shipped with Hookserver
 cd /usr/local/lib/node_modules/hookserver/examples  
@@ -20,11 +19,10 @@ hookserver add key my-test-key
 
 # test it out: send a get request to 'http://localhost:6086/hello?my-test-key'
 # 6086 is the default port, you can use -p or --port flag to override it
-curl http://localhost:6086/hello?my-test-key
+curl "http://localhost:6086/hello?my-test-key"
 
 # the output:
 # {"status":"success","result":"Hello Webhooks!\n"}
-
 ```
 
 For more information, see `hookserver help`.
@@ -43,7 +41,6 @@ npm install -g hookserver
 # ...you should use
 
 sudo npm i -g hookserver --unsafe-perm
-
 ```
 
 ## License
