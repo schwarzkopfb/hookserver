@@ -7,18 +7,18 @@
 npm install -g hookserver
 
 # start Hookserver daemonized and redirect log to ./hookserver.log
+# 6086 is the default port, you can use -p or --port option to override it
 hookserver start -d -l ./hookserver.log
 
 # switch to the examples folder shipped with Hookserver
 cd /usr/local/lib/node_modules/hookserver/examples  
 
-# register a webhook with the name 'hello' that triggers the bash script found at './hello.sh' to executed
+# register a webhook with the name 'hello' that triggers the bash script found at './hello.sh' to be executed
 hookserver add hook hello ./hello.sh
 # register a new security key 'my-test-key' to allow access to the registered webhooks via http requests
 hookserver add key my-test-key
 
 # test it out: send a get request to 'http://localhost:6086/hello?my-test-key'
-# 6086 is the default port, you can use -p or --port flag to override it
 curl "http://localhost:6086/hello?my-test-key"
 
 # the output:
@@ -34,12 +34,10 @@ If `npm` was invoked with root privileges, then it will change the uid to the us
 Set the `--unsafe-perm` flag to run scripts with root privileges and let Hookserver register its working folders.
 
 ```sh
-# so instead of...
- 
+# so instead of this...
 npm install -g hookserver
 
-# ...you should use
-
+# ...maybe you will have to use this
 sudo npm i -g hookserver --unsafe-perm
 ```
 

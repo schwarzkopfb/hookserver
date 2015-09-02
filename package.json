@@ -1,6 +1,6 @@
 {
   "name": "hookserver",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "description": "A simple webserver and cli utility that provides an http interface to accept webhooks that are triggering bash script execution.",
   "main": "index.js",
   "preferGlobal": true,
@@ -28,5 +28,13 @@
   "dependencies": {
     "colors": "^1.1.2",
     "minimist": "^1.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schwarzkopfb/hookserver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/schwarzkopfb/hookserver/issues"
+  },
+  "homepage": "https://github.com/schwarzkopfb/hookserver#readme"
 }
