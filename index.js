@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
+global.argv = require('minimist')(process.argv.slice(2))
+
 var utils      = require('./lib/utils'),
     server     = require('./lib/hookserver'),
-    argv       = require('minimist')(process.argv.slice(2)),
     command    = argv._.shift(),
     subcommand = argv._.shift()
 

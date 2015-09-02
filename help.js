@@ -20,7 +20,7 @@ var commands = {
             }
         },
 
-        desc: 'Register a new security key that allows access to any registered webhook on this server.',
+        desc: 'Register a new security key and save its md5 hash. This key allows access to any registered webhook on this server. You can use multiple keys at the same time.',
 
         opts: {
             l: {
@@ -65,7 +65,7 @@ var commands = {
 
     'list keys': {
         args: [],
-        desc: 'Display a list of stored security keys.'
+        desc: 'Display a list of stored md5 hashes generated from security keys.'
     },
 
     'run': {
@@ -86,6 +86,11 @@ var commands = {
             p: {
                 aliases: [ 'port' ],
                 desc: 'Overwrite default port (6086).'
+            },
+
+            l: {
+                aliases: [ 'log' ],
+                desc: 'If running deamonized, you can set the log path of the server with this flag.'
             }
         }
     },

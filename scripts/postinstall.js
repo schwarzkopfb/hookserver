@@ -2,11 +2,14 @@
  * Created by schwarzkopfb on 15/9/1.
  */
 
+global.argv = require('minimist')(process.argv.slice(2))
+
 var utils  = require('../lib/utils'),
     colors = require('colors')
 
 try {
     utils.ensureConfigDirectorySync()
+    utils.ensureLogFileSync()
 
     utils.ensureHookDirectory(function (err) {
         if (err)
