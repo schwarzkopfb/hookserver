@@ -1,20 +1,26 @@
+[![view on npm](http://img.shields.io/npm/v/hookserver.svg)](https://www.npmjs.com/package/hookserver)
+[![npm module downloads per month](http://img.shields.io/npm/dm/hookserver.svg)](https://www.npmjs.com/package/hookserver)
+![Analytics](https://ga-beacon.appspot.com/UA-66872036-1/hookserver/README.md?pixel)
+
 # Hookserver
 
 ## Usage
 
 ```sh
-# install Hookserver as a cli tool
+# install it as a cli tool
 npm install -g hookserver
 
-# start Hookserver daemonized and redirect log to ./hookserver.log
+# start the server daemonized and redirect log to ./hookserver.log
 # 6086 is the default port, you can use -p or --port option to override it
 hookserver start -d -l ./hookserver.log
 
-# switch to the examples folder shipped with Hookserver
+# switch to the examples folder shipped with the package
 cd /usr/local/lib/node_modules/hookserver/examples  
 
-# register a webhook with the name 'hello' that triggers the bash script found at './hello.sh' to be executed
+# register a webhook with the name 'hello' 
+# that will trigger the bash script found at './hello.sh' to be executed
 hookserver add hook hello ./hello.sh
+
 # register a new security key 'my-test-key' to allow access to the registered webhooks via http requests
 hookserver add key my-test-key
 
