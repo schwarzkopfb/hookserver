@@ -10,7 +10,7 @@ Register a named webhook.
 **name**: Name of the hook.  
 **scriptPath**: File path pointing to a bash script to be executed when the webhook is triggered. 
 
-###<code>hookserver add key [&lt;key&gt;] [-l]</code>
+###<code>add key [&lt;key&gt;] [-l]</code>
 Register a new security key and save its md5 hash.
 This key allows access to any registered webhook on this server.
 You can use multiple keys at the same time.
@@ -19,65 +19,65 @@ You can use multiple keys at the same time.
  
 **-l, --length**: If no key provided, you can set the length of the random-generated key with this option.  
 
-###<code>hookserver update hook &lt;name&gt; &lt;scriptPath&gt;</code>
+###<code>update hook &lt;name&gt; &lt;scriptPath&gt;</code>
 Update a previously registered webhook.  
  
 **name**: Name of the hook.  
 **scriptPath**: File path pointing to the new bash script to be executed when the webhook is triggered.  
 
-###<code>hookserver update key &lt;currentKey&gt; &lt;newKey&gt;</code>
+###<code>update key &lt;currentKey&gt; &lt;newKey&gt;</code>
 Update a previously registered security key.  
  
 **currentKey**: The key to be updated.  
 **newKey**: The new key replacing the current one.  
 
-###<code>hookserver remove hook &lt;name&gt;</code>
+###<code>remove hook &lt;name&gt;</code>
 Unregister a previously added webhook.  
  
 **name**: Name of the hook.  
 
-###<code>hookserver remove key &lt;key&gt;</code>
+###<code>remove key &lt;key&gt;</code>
 Drop a previously added security key.  
  
 **key**: The key to be dropped.  
 
-###<code>hookserver list hooks</code>
+###<code>list hooks</code>
 Display a list of registered webhooks.  
 
-###<code>hookserver list keys</code>
+###<code>list keys</code>
 Display a list of stored md5 hashes generated from security keys.  
 
-###<code>hookserver run &lt;hookName&gt;</code>                   
+###<code>run &lt;hookName&gt;</code>                   
 Trigger a webhook from commandline.  
 
 **hookName**: Name of the hook to run.  
 
-###<code>hookserver start [-d] [-p] [-l]</code>
+###<code>start [-d] [-p] [-l]</code>
 Start up the webhook http server.  
  
 **-d, --daemonize**: This option allows you to run the server in the background detached from this shell.  
 **-p, --port**: Overwrite default port (6086).  
 **-l, --log**: If running deamonized, you can set the log path of the server with this flag.  
 
-###<code>hookserver stop [-f]</code>
+###<code>stop [-f]</code>
 Stop server daemon.  
  
 **-f, --force**: Set this option to avoid waiting the server to close its open connections and stop it immediately.  
 
-###<code>hookserver cleanup</code>
+###<code>cleanup</code>
 Delete all the registered hooks and keys.  
 Warning: this action cannot be undone.  
 
-###<code>hookserver version</code>
+###<code>version</code>
 Show Hookserver version number.  
 
-###<code>hookserver help</code>
+###<code>help</code>
 Show this help.  
 
 ##Options:
 
-###<code>-v, --version                               
+###<code>-v, --version</code>  
 Set this option without any command or subcommand to display Hookserver version number.  
 
-###<code>-h, --help                                  
+###<code>-h, --help</code>  
 Set this option without any command or subcommand to display this help.  
