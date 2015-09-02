@@ -10,7 +10,7 @@ var fs       = require('fs'),
     path     = require('path'),
     parseUrl = require('url').parse,
     spawn    = require('child_process').spawn,
-    utils    = require('./utils'),
+    utils    = require('./lib/utils'),
     server,
     keys
 

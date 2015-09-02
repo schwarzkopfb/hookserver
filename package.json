@@ -1,13 +1,13 @@
 {
   "name": "hookserver",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "A simple webserver and cli utility that provides an http interface to accept webhooks that are triggering bash script execution.",
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
     "test": "node test",
-    "postinstall": "node ./scripts/postinstall",
-    "postuninstall": "node ./scripts/postuninstall"
+    "cleanup": "node lib/cleanup",
+    "postinstall": "node ./scripts/postinstall"
   },
   "bin": {
     "hookserver": "index.js"

@@ -3,7 +3,7 @@
 global.argv = require('minimist')(process.argv.slice(2))
 
 var utils      = require('./lib/utils'),
-    server     = require('./lib/hookserver'),
+    server     = require('./hookserver'),
     command    = argv._.shift(),
     subcommand = argv._.shift()
 
@@ -17,7 +17,7 @@ function unknown() {
 }
 
 function printHelp() {
-    console.log(require('./help'))
+    console.log(require('./lib/help'))
 }
 
 function printVersion() {
@@ -144,6 +144,12 @@ switch(command) {
         var force = subcommand === 'force' || argv.f || argv.force
 
         utils.stopServer(force, done)
+        break
+
+    case 'clean':
+    case 'cleanup':
+    case 'reset':
+        require('./lib/cleanup')
         break
 
     case 'version':

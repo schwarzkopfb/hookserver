@@ -41,6 +41,11 @@ npm install -g hookserver
 sudo npm i -g hookserver --unsafe-perm
 ```
 
+## Application data
+
+Keep in mind that registered hooks and security keys will not be deleted if you uninstall or update Hookserver.
+You have to run `hookserver cleanup` before uninstalling it to remove all the saved application data. 
+
 ## License
 
 [MIT license](https://github.com/schwarzkopfb/hookserver/blob/master/LICENSE).
