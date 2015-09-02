@@ -15,25 +15,15 @@ var fs       = require('fs'),
     keys
 
 function startup(callback) {
-    //utils.ensureHookDirectory(function (err) {
-    //    if(err)
-    //        callback(err)
-    //    else
-    //        utils.ensureKeyFile(function (err) {
-    //            if(err)
-    //                callback(err)
-    //            else
-                    utils.watchKeyFile(function (err, keyList) {
-                        if(err)
-                            callback(err)
-                        else {
-                            keys = keyList
+    utils.watchKeyFile(function (err, keyList) {
+        if(err)
+            callback(err)
+        else {
+            keys = keyList
 
-                            callback()
-                        }
-                    })
-    //        })
-    //})
+            callback()
+        }
+    })
 }
 
 var pidPath = path.join(utils.APP_HOME, 'hookserver.pid')

@@ -33,3 +33,4 @@ node_modules
 .npmignore
 .gitignore
 .DS_Store
+help.md

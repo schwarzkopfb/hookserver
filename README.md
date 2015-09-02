@@ -25,7 +25,7 @@ curl "http://localhost:6086/hello?my-test-key"
 # {"status":"success","result":"Hello Webhooks!\n"}
 ```
 
-For more information, see `hookserver help`.
+For more information, run `hookserver help` or take a look at [help.md](https://github.com/schwarzkopfb/enumerated/blob/master/help.md).
 
 **Note on permissions:** 
 Hookserver uses `/var/lib/hookserver` to store hook scripts and security keys.
