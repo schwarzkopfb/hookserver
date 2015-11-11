@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
 
-# basic example to deply a node.js project with a webhook
+# simple bash script that deploys a node.js project via git
+# if latest commit message contains the specified deployment flag
+# then pull latest commit from remote and restart the module
 
-git pull master
-npm restart
+### config ###
+
+package_path="/apps/my-node-app"
+deployment_flag="[live]"
+
+### ### ### ###
+
+cd $package_path
+
+git fetch
+
+commit_message=`git log --pretty=format:%s -n 1 origin/master`
+
+if [[ $commit_message == *"$deployment_flag"* ]]
+then
+  git pull
+  npm i
+  npm restart
+fi
